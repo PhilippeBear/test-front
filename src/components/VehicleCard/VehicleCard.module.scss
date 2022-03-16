@@ -1,6 +1,7 @@
 @import '../../variables.scss';
 
 .container {
+  // Review: le flex est pas fou faudrait revoir le layout mais bon, on verra le style plus tard pas sur cette consigne !
   flex: 0 0 30%;
   border: 1px solid black;
   border-radius: 0.25rem;
