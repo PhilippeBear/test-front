@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
-import VehicleCard from "../../components/VehicleCard/VehicleCard";
-import { getVehicles } from "../../services/vehicles";
-import styles from "./VehiclesIndex.module.scss";
+import React, { useEffect, useState } from 'react'
+import VehicleCard from '../../components/VehicleCard/VehicleCard'
+import { getVehicles } from '../../services/vehicles'
+import styles from './VehiclesIndex.module.scss'
 
 const VehiculeIndex = () => {
-  const [cars, setCars] = useState(null);
-  let order = false;
+  const [cars, setCars] = useState(null)
+  let order = false
 
   useEffect(() => {
     const fetchCars = async () => {
-      setCars(await getVehicles());
-    };
-    fetchCars();
-  }, []);
+      setCars(await getVehicles())
+    }
+    fetchCars()
+  }, [])
 
   if (!cars) {
-    return <>loading</>;
+    return <>loading</>
   }
 
   if (order) {
@@ -27,12 +27,12 @@ const VehiculeIndex = () => {
         </div>
         <div className={styles.cardsContainer}>
           {cars.map((car) => {
-            if (car.color !== "Black" && car.color !== "White") return <> </>;
-            return <VehicleCard key={car.id} vehicle={car} />;
+            if (car.color !== 'Black' && car.color !== 'White') return <> </>
+            return <VehicleCard key={car.id} vehicle={car} />
           })}
         </div>
       </>
-    );
+    )
   }
 
   return (
@@ -40,7 +40,7 @@ const VehiculeIndex = () => {
       <h3>My garage</h3>
       <div className={styles.actionsContainer}>
         <button
-          style={{ border: "red 1px solid", cursor: "pointer" }}
+          style={{ border: 'red 1px solid', cursor: 'pointer' }}
           onClick={() => (order = true)}
         >
           Only black & white
@@ -52,7 +52,7 @@ const VehiculeIndex = () => {
         ))}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default VehiculeIndex;
+export default VehiculeIndex

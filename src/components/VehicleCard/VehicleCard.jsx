@@ -1,4 +1,4 @@
-import style from "./VehicleCard.module.scss";
+import style from './VehicleCard.module.scss'
 
 let VehicleCard = (props) => {
   return (
@@ -11,7 +11,7 @@ let VehicleCard = (props) => {
       {props.vehicle.doors >= 2 && <div>{props.vehicle.doors} doors</div>}
       <div>{props.vehicle.mileage} miles</div>
     </div>
-  );
-};
+  )
+}
 
-export default VehicleCard;
+export default VehicleCard
