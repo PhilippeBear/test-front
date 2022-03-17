@@ -1,7 +1,3 @@
-import { Vehicles } from './domains/Vehicles'
+import { Vehicles } from './pages/Vehicles'
 
-export const App = () => (
-  <div className="App">
-    <Vehicles />
-  </div>
-)
+export const App = () => <Vehicles />
