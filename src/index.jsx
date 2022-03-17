@@ -8,5 +8,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 )
-
-// Fix: j'ai changé ça en jsx parce que App render du jsx
