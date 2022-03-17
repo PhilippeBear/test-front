@@ -4,7 +4,9 @@
 
 export const getVehicles = async () => {
   const data = fetch(
-    'https://random-data-api.com/api/vehicle/random_vehicle?size=10'
+    // Remarque: C'est un API Random, selon la doc on a pas de pagination possible de ce côté
+    // Donc logiquement, on peut seulement ajouter la pagination côté front, ce que je trouve personnellement pas propre mais tant pis
+    'https://random-data-api.com/api/vehicle/random_vehicle?size=100'
   )
     .then(async (response) => response.json())
     .catch((error) => console.error('Error: ', error))
