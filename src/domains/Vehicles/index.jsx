@@ -41,12 +41,18 @@ export const Vehicles = () => {
   if (order) {
     return (
       <>
-      {/* Review: pourquoi un H3 ? Pas très important mais si ça avait été référencé c'était bizarre ici niveau hiérarchie */}
+        {/* Review: pourquoi un H3 ? Pas très important mais si ça avait été référencé c'était bizarre ici niveau hiérarchie */}
         <h3>My garage</h3>
         <div className={styles.actionsContainer}>
           {/* Fix: niveau HTML, les butto ont normalement besoin d'un type */}
           {/* Fix: le switch sur order ici est pas propre et potentiellement dangereux (d'ailleurs ça fonctionne pas je crois). Autant utilisé un state */}
-          <button className={styles.button} type="button" onClick={() => setOrder(false)}>Reset order</button>
+          <button
+            className={styles.button}
+            type="button"
+            onClick={() => setOrder(false)}
+          >
+            Reset order
+          </button>
         </div>
         <div className={styles.cardsContainer}>
           {/* Review: C'est pas très propre et pas très lisible tel quel */}
@@ -62,8 +68,13 @@ export const Vehicles = () => {
             // Review: on aurait pu rajouter un empty state si nous n'avons pas de cars avec et sans le filtre des couleurs.
 
             cars
-              .filter((car) => car.color === carColor.WHITE || car.color === carColor.BLACK)
-              .map(car => <VehicleCard key={car.id} vehicle={car} />)
+              .filter(
+                (car) =>
+                  car.color === carColor.WHITE || car.color === carColor.BLACK
+              )
+              .map((car) => (
+                <VehicleCard key={car.id} vehicle={car} />
+              ))
           }
         </div>
       </>
