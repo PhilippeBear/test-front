@@ -149,10 +149,48 @@ export const Vehicles = () => {
             return true
           }
           return car.mileage < parseInt(selectOption, 10)
+        }).length > 0 ? (
+        cars
+          // Filter for order
+          .filter((car) => {
+            if (!withColorFilter) {
+              return true
+            }
+            return car.color === carColor.WHITE || car.color === carColor.BLACK
+          })
+          // Filter for miles
+          .filter((car) => {
+            if (selectOption === 'all') {
+              return true
+            }
+            return car.mileage < parseInt(selectOption, 10)
+          })
+          .map((car) => (
+            <VehicleCard key={car.uid} vehicle={car} isMobile={isMobile} />
+          ))
+      ) : (
+        <Flex w="full" justifyContent="center" mt="4">
+          There is no result for that.
+        </Flex>
+      )}
+      {/* {cars
+        // Filter for order
+        .filter((car) => {
+          if (!withColorFilter) {
+            return true
+          }
+          return car.color === carColor.WHITE || car.color === carColor.BLACK
+        })
+        // Filter for miles
+        .filter((car) => {
+          if (selectOption === 'all') {
+            return true
+          }
+          return car.mileage < parseInt(selectOption, 10)
         })
         .map((car) => (
           <VehicleCard key={car.uid} vehicle={car} isMobile={isMobile} />
-        ))}
+        ))} */}
     </>
   )
 }
