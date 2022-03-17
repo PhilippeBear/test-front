@@ -1,0 +1,15 @@
+.actionsContainer {
+  margin-bottom: 1rem;
+}
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+// Review (même si c'est moi qui l'ai fait): il aurait aussi fallu sortir ça dans un style global j'imagine. (Je suis pas un spécialiste styled component)
+
+.button {
+  border: red 1px solid;
+  cursor: pointer;
+}
